@@ -5,6 +5,7 @@ namespace App\Providers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 /**
  * Class AppServiceProvider.
@@ -38,7 +39,8 @@ class AppServiceProvider extends ServiceProvider
          *
          * These will be overridden by LocaleMiddleware if the session local is set
          */
-
+        //database issues
+        Schema::defaultStringLength(191);
         // setLocale for php. Enables ->formatLocalized() with localized values for dates
         setlocale(LC_TIME, config('app.locale_php'));
 

@@ -51,6 +51,13 @@
                                 @lang('labels.backend.access.roles.management')
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                                active_class(Route::is('company/*'))
+                            }}" href="{{ route('company.index') }}">
+                                @lang('Company management')
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

@@ -12,6 +12,12 @@ use App\Models\Auth\Traits\Relationship\UserRelationship;
  */
 class User extends BaseUser
 {
+
+	public function companies()
+    {
+    	return $this->hasMany('App\Models\Company');
+    }
+    
     use UserAttribute,
         UserMethod,
         UserRelationship,

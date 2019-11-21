@@ -18,8 +18,12 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('mobile')->unique()->nullable();
             $table->string('email')->unique();
+            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->date('birthdate')->nullable();
             $table->string('avatar_type')->default('gravatar');
             $table->string('avatar_location')->nullable();
             $table->string('password')->nullable();
