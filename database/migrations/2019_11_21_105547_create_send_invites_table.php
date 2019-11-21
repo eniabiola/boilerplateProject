@@ -15,7 +15,14 @@ class CreateSendInvitesTable extends Migration
     {
         Schema::create('send_invites', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('name');
+            $table->text('email');
+            $table->unsignedBigInteger('company_id');
+            $table->text('slug');
             $table->timestamps();
+
+            //Foreign Key
+            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 

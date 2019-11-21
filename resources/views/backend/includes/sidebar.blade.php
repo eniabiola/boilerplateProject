@@ -58,6 +58,13 @@
                                 @lang('Company management')
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{
+                                active_class(Route::is('company/*'))
+                            }}" href="{{ url('/company/sendinvite') }}">
+                                @lang('Send User Invite')
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

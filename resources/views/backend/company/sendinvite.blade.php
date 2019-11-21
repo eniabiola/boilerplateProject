@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    {{ html()->form('POST', route('company.store'))->class('form-horizontal')->open() }}
+    {{ html()->form('POST', url('/company/sentinvite'))->class('form-horizontal')->open() }}
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -62,7 +62,7 @@
                     </div><!--col-->
 
                     <div class="col text-right">
-                        {{ form_submit(__('buttons.general.crud.create')) }}
+                        {{ form_submit(__('Send Invite')) }}
                     </div><!--col-->
                 </div><!--row-->
             </div><!--card-footer-->

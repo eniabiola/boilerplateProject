@@ -65,6 +65,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
+        // return $request;
         $this->userRepository->create($request->only(
             'first_name',
             'last_name',

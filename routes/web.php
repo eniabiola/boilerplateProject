@@ -33,5 +33,8 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      */
     include_route_files(__DIR__.'/backend/');
 });
+Route::get('company/receivedinvite/{name}/{slug}', 'CompanyController@ReceivedInvite')->where('slug', '[\w\d\-\_]+');
 Route::get('/company/sendinvite', 'CompanyController@SendInvite');
+Route::post('/company/sentinvite', 'CompanyController@SentInvite');
+Route::post('/registereduser', 'CompanyController@RegisteredUser');
 Route::resource('company', 'CompanyController');
